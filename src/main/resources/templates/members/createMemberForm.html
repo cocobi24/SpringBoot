@@ -1,79 +1,25 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>신규 점포 등록</title>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/createForm.css}">
+    <link rel="stylesheet" href="css/createForm.css">
+    <title>신규 점포 등록</title>
 </head>
-<style>
-    #container {
-        display: inline-block;
-        text-align: center;
-    }
-    #name {
-        display: block;
-        width: 150px;
-        height: 25px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom : 3px solid black;
-    }
-    #owner {
-        display: block;
-        width: 150px;
-        height: 25px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom : 3px solid black;
-    }
-    #description {
-        display: block;
-        width: 150px;
-        height: 25px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom : 3px solid black;
-    }
-    #address {
-        display: block;
-        width: 150px;
-        height: 25px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom : 3px solid black;
-    }
-    #phone {
-        width: 150px;
-        height: 25px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom : 3px solid black;
-    }
-    #submit, #home {
-        width: 50px;
-        height: 25px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom : 3px solid black;
-    }
-
-</style>
 <body>
-<div class="container" id="container">
-    <form id="form" action="/members/new" method="post">
-            <input type="text" id="name" name="name" placeholder="점포명을 입력하세요">
-            <input type="text" id="owner" name="owner" placeholder="업주명을 입력하세요">
-            <input type="text" id="description" name="description" placeholder="점포 정보를 입력하세요">
-            <input type="text" id="address" name="address" placeholder="주소를 입력하세요">
-            <input type="text" id="phone" name="phone" placeholder="전화번호를 입력하세요">
-        <button id="submit" type="submit">등록</button>
-        <button id="home" type="button"><a href="/">취소</a></button>
-    </form>
-</div> <!-- /container -->
+    <div class="form-container">
+        <div class="form">
+            <form id="form" action="/members/new" method="post">
+                <input type="text" id="name" name="name" placeholder="점포명을 입력하세요">
+                <input type="text" id="owner" name="owner" placeholder="업주명을 입력하세요">
+                <input type="text" id="description" name="description" placeholder="점포 정보를 입력하세요">
+                <input type="text" id="address" name="address" placeholder="주소를 입력하세요">
+                <input type="text" id="phone" name="phone" placeholder="전화번호를 입력하세요">
+                <button id="submit" type="submit">등록</button>
+                <a href="/"><button id="home" type="button">취소</button></a>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

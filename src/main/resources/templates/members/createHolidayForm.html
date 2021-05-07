@@ -1,48 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>휴일 등록</title>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/form.css}">
+    <link rel="stylesheet" href="css/form.css">
+    <title>휴일 등록</title>
 </head>
-<style>
-    #container {
-        display: inline-block;
-        text-align: center;
-    }
-    #level {
-        width: 150px;
-        height: 25px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom : 3px solid black;
-    }
-    #holiday {
-        width: 150px;
-        height: 25px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom : 3px solid black;
-    }
-    #submit, #home {
-        width: 50px;
-        height: 25px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom : 3px solid black;
-    }
-
-</style>
 <body>
-<div class="container" id="container">
-    <form id="form" action="/members/holiday" method="post">
-        <input type="text" id="level" name="level" placeholder="level을 입력하세요">
-        <input type="text" id="holiday" name="holiday" placeholder="휴무일을 입력하세요(yyyy-mm-dd)">
-        <button id="submit" type="submit">확인</button>
-        <button id="home" type="button"><a href="/">취소</a></button>
-    </form>
-</div> <!-- /container -->
+    <div class="form-container">
+        <div class="form">
+            <form id="form" action="/members/holiday" method="post">
+                <input type="text" id="level" name="level" placeholder="level을 입력하세요">
+                <input type="text" id="holiday" name="holiday" placeholder="휴일을 입력하세요(yyyy-mm-dd)">
+                <button class="menu" id="submit" type="submit">확인</button>
+                <a class="menu" href="/"><button id="home" type="button">취소</button></a>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
