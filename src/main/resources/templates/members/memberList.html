@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>점포 리스트</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+    table {
+        width: 100%;
+        border: 1px solid #444444;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #444444;
+        padding: 10px;
+    }
+    button {
+        margin-top: 20px;
+        float: right;
+    }
+</style>
+<body>
+<div class="container">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>점포명</th>
+                <th>정보</th>
+                <th>level</th>
+                <th>영업상태</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="member : ${members}">
+                <td th:text="${member.name}"></td>
+                <td th:text="${member.description}"></td>
+                <td th:text="${member.level}"></td>
+                <td th:text="OPEN"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="button"><a href="/">이전 메뉴로</a></button>
+</div> <!-- /container -->
+</body>
+</html>
