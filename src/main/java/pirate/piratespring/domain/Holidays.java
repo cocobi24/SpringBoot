@@ -1,9 +1,11 @@
 package pirate.piratespring.domain;
 
+import java.sql.Date;
+
 public class Holidays {
 
     private Long level;
-    private String holiday;
+    private Date holiday;
 
     public Long getLevel() {
         return level;
@@ -13,11 +15,11 @@ public class Holidays {
         this.level = level;
     }
 
-    public String getHoliday() {
+    public Date getHoliday() {
         return holiday;
     }
 
-    public void setHoliday(String holiday) {
+    public void setHoliday(Date holiday) {
         this.holiday = holiday;
     }
 }

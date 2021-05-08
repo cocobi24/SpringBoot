@@ -1,6 +1,7 @@
 package pirate.piratespring.repository;
 
 import org.springframework.jdbc.datasource.DataSourceUtils;
+import pirate.piratespring.domain.BusinessTimes;
 import pirate.piratespring.domain.Holidays;
 import pirate.piratespring.domain.Member;
 
@@ -17,7 +18,7 @@ public class JdbcMemberRepository implements MemberRepository {
     public JdbcMemberRepository(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-
+    String uname = "";
     @Override
     public Member save(Member member) {
         String sql = "insert into member(name, owner, description, address, phone) values(?,  ?, ?, ?, ?)";
@@ -29,6 +30,7 @@ public class JdbcMemberRepository implements MemberRepository {
             pstmt = conn.prepareStatement(sql,
                     Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, member.getName());
+            uname = member.getName();
             pstmt.setString(2, member.getOwner());
             pstmt.setString(3, member.getDescription());
             pstmt.setString(4, member.getAddress());
@@ -41,6 +43,50 @@ public class JdbcMemberRepository implements MemberRepository {
                 throw new SQLException("level 조회 실패");
             }
             return member;
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        } finally {
+            close(conn, pstmt, rs);
+        }
+    }
+
+    @Override
+    public BusinessTimes businessTimesCreate(BusinessTimes businessTimes) {
+        String sql = "insert into businessTimes(name, day, open, close) values(?,  ?, ? , ?),(?,  ?, ? , ?),(?,  ?, ? , ?),(?,  ?, ? , ?),(?,  ?, ? , ?)";
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = getConnection();
+            pstmt = conn.prepareStatement(sql,
+                    Statement.RETURN_GENERATED_KEYS);
+            pstmt.setString(1, uname);
+            pstmt.setString(2, businessTimes.getMonday());
+            pstmt.setString(3, businessTimes.getMondayOpen());
+            pstmt.setString(4, businessTimes.getMondayClose());
+
+            pstmt.setString(5, uname);
+            pstmt.setString(6, businessTimes.getTuesday());
+            pstmt.setString(7, businessTimes.getTuesdayOpen());
+            pstmt.setString(8, businessTimes.getTuesdayClose());
+
+            pstmt.setString(9, uname);
+            pstmt.setString(10, businessTimes.getWednesday());
+            pstmt.setString(11, businessTimes.getWednesdayOpen());
+            pstmt.setString(12, businessTimes.getWednesdayClose());
+
+            pstmt.setString(13, uname);
+            pstmt.setString(14, businessTimes.getThursday());
+            pstmt.setString(15, businessTimes.getThursdayOpen());
+            pstmt.setString(16, businessTimes.getThursdayClose());
+
+            pstmt.setString(17, uname);
+            pstmt.setString(18, businessTimes.getFriday());
+            pstmt.setString(19, businessTimes.getFridayOpen());
+            pstmt.setString(20, businessTimes.getFridayClose());
+            pstmt.executeUpdate();
+            rs = pstmt.getGeneratedKeys();
+            return businessTimes;
         } catch (Exception e) {
             throw new IllegalStateException(e);
         } finally {
@@ -80,7 +126,7 @@ public class JdbcMemberRepository implements MemberRepository {
             pstmt = conn.prepareStatement(sql,
                     Statement.RETURN_GENERATED_KEYS);
             pstmt.setLong(1, holiday.getLevel());
-            pstmt.setString(2, holiday.getHoliday());
+            pstmt.setDate(2, holiday.getHoliday());
             pstmt.executeUpdate();
             rs = pstmt.getGeneratedKeys();
             return holiday;

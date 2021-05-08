@@ -1,6 +1,9 @@
-package pirate.piratespring.domain;
+package pirate.piratespring.controller;
 
-public class BusinessTimes {
+
+import java.sql.Date;
+
+public class BusinessTimesForm {
     private String name;
 
     private String monday;

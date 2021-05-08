@@ -1,6 +1,7 @@
 package pirate.piratespring.repository;
 
 import org.springframework.stereotype.Repository;
+import pirate.piratespring.domain.BusinessTimes;
 import pirate.piratespring.domain.Holidays;
 import pirate.piratespring.domain.Member;
 
@@ -15,6 +16,11 @@ public class MemoryMemberRepository implements MemberRepository {
         member.setLevel(++sequence);
         store.put(member.getLevel(), member);
         return member;
+    }
+
+    @Override
+    public BusinessTimes businessTimesCreate(BusinessTimes businessTimes) {
+        return businessTimes;
     }
 
     @Override

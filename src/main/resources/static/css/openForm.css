@@ -1,0 +1,75 @@
+
+body {
+    background:rgb(215, 224, 226);
+}
+
+.form-container {
+    width: 900px;
+    padding: 13% 5%;
+    margin: auto;
+}
+.form {
+    background: linear-gradient(to bottom, rgba(255, 208, 0, 0.8) 0%, rgba(219, 179, 0, 0.8) 100%);
+    max-width: 900px;
+    margin: 10px 80px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+}
+.day-form {
+    display: flex;
+    width: 100%;
+}
+.button-form {
+    padding-top: 18px;
+    padding-left: 18px;
+    display: block;
+    width: auto;
+}
+.form input {
+    outline: 0;
+    background: rgba(15, 17, 21, 0.8);
+    color: whitesmoke;
+    width: 100px;
+    border: 0;
+    margin: 5px 0 5px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+}
+.form #submit,.form #home {
+    text-transform: uppercase;
+    outline: 0;
+    background: linear-gradient(to bottom, rgba(250, 212, 44, 0.8) 0%, rgba(143, 134, 12, 0.6) 100%);
+    border:1px solid rgba(5, 43, 53, .3);
+    border-radius: 10px 10px 10px 10px;
+    width: 80px;
+    height: 20px;
+    line-height: 3px;
+    margin: 5px auto;
+    padding: 15px;
+    color: whitesmoke;
+    font-size: 14px;
+    cursor: pointer;
+}
+.form #submit:hover,.form #submit:active,.form #submit:focus
+,.form #home:hover,.form #home:active,.form #home:focus {
+    background:  linear-gradient(to bottom, rgba(168, 175, 71, 0.8) 0%, rgba(242, 255, 62, 0.8) 100%);
+    border:1px solid rgba(250, 212, 44, 0.8);
+    border-radius: 10px 10px 10px 10px;
+    color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: black;
+    font-size:17px;
+}
+
+.menu {
+    padding: 10px;
+}

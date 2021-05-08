@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/openForm.css}">
+    <link rel="stylesheet" href="css/openForm.css">
+    <title>점포 운영 시간 등록</title>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form">
+            <form class="day-form" id="form" action="/members/open" method="post">
+                <div>Monday
+                    <input type="hidden" id="monday" name="monday" value="Monday">
+                    <input type="text" id="mondayOpen" name="mondayOpen" placeholder="open">
+                    <input type="text" id="mondayClose" name="mondayClose" placeholder="close">
+                </div>
+                <div>Tuesday
+                    <input type="hidden" id="tuesday" name="tuesday" value="Tuesday">
+                    <input type="text" id="tuesdayOpen" name="tuesdayOpen" placeholder="open">
+                    <input type="text" id="tuesdayClose" name="tuesdayClose" placeholder="close">
+                </div>
+                <div>Wednesday
+                    <input type="hidden" id="wednesday" name="wednesday" value="Wednesday">
+                    <input type="text" id="wednesdayOpen" name="wednesdayOpen" placeholder="open">
+                    <input type="text" id="wednesdayClose" name="wednesdayClose" placeholder="close">
+                </div>
+                <div>Thursday
+                    <input type="hidden" id="thursday" name="thursday" value="Thursday">
+                    <input type="text" id="thursdayOpen" name="thursdayOpen" placeholder="open">
+                    <input type="text" id="thursdayClose" name="thursdayClose" placeholder="close">
+                </div>
+                <div>Friday
+                    <input type="hidden" id="friday" name="friday" value="Friday">
+                    <input type="text" id="fridayOpen" name="fridayOpen" placeholder="open">
+                    <input type="text" id="fridayClose" name="fridayClose" placeholder="close">
+                </div>
+                <div class="button-form">
+                    <div>
+                        <a><button id="submit" type="submit">등록</button></a>
+                    </div>
+                    <div>
+                        <a href="/"><button id="home" type="button">취소</button></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

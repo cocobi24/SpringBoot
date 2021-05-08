@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import pirate.piratespring.domain.BusinessTimes;
 import pirate.piratespring.domain.Holidays;
 import pirate.piratespring.domain.Member;
 import pirate.piratespring.service.MemberService;
@@ -36,6 +37,41 @@ public class MemberController<Holiday> {
         member.setAddress(form.getAddress());
         member.setPhone(form.getPhone());
         memberService.join(member);
+        return "redirect:/members/open";
+    }
+
+    // 점포 영업시간 등록
+    @GetMapping(value = "/members/open")
+    public String openForm() {
+        return "members/createOpenForm";
+    }
+
+    @PostMapping(value = "/members/open")
+    public String open(BusinessTimesForm businessTimesForm) {
+        BusinessTimes businessTimes = new BusinessTimes();
+        businessTimes.setName(businessTimesForm.getName());
+
+        businessTimes.setMonday(businessTimesForm.getMonday());
+        businessTimes.setMondayOpen(businessTimesForm.getMondayOpen());
+        businessTimes.setMondayClose(businessTimesForm.getMondayClose());
+
+        businessTimes.setTuesday(businessTimesForm.getTuesday());
+        businessTimes.setTuesdayOpen(businessTimesForm.getTuesdayOpen());
+        businessTimes.setTuesdayClose(businessTimesForm.getTuesdayClose());
+
+        businessTimes.setWednesday(businessTimesForm.getWednesday());
+        businessTimes.setWednesdayOpen(businessTimesForm.getWednesdayOpen());
+        businessTimes.setWednesdayClose(businessTimesForm.getWednesdayClose());
+
+        businessTimes.setThursday(businessTimesForm.getThursday());
+        businessTimes.setThursdayOpen(businessTimesForm.getThursdayOpen());
+        businessTimes.setThursdayClose(businessTimesForm.getThursdayClose());
+
+        businessTimes.setFriday(businessTimesForm.getFriday());
+        businessTimes.setFridayOpen(businessTimesForm.getFridayOpen());
+        businessTimes.setFridayClose(businessTimesForm.getFridayClose());
+
+        memberService.businessTimesCreate(businessTimes);
         return "redirect:/";
     }
 
@@ -53,8 +89,6 @@ public class MemberController<Holiday> {
         return "redirect:/";
     }
 
-
-
     //점포 휴일 등록
     @GetMapping(value = "/members/holiday")
     public String holidayForm() {
@@ -69,8 +103,6 @@ public class MemberController<Holiday> {
         memberService.holidayCreate(holidays);
         return "redirect:/";
     }
-
-
 
     //점포 리스트
     @GetMapping(value = "/members")

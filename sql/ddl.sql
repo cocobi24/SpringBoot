@@ -1,4 +1,6 @@
 drop table if exists member CASCADE;
+drop table if exists businessTimes CASCADE;
+drop table if exists holidays CASCADE;
 
 create table member
 (   name varchar(255),
@@ -11,16 +13,13 @@ create table member
 );
 
 create table businessTimes
-(   level bigint,
+(   name varchar(255),
     day varchar(10),
     open varchar(10),
-    close varchar(10),
-    primary key (level),
-    FOREIGN KEY (level) REFERENCES member (level)
+    close varchar(10)
 );
 
 create table holidays
 (   level bigint,
-    holiday varchar(10),
-    primary key (level)
+    holiday date
 );
