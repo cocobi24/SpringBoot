@@ -9,10 +9,10 @@
 - 점포 삭제
   
   
-## 설치 및 환경설정 가이드
+## 개발 환경
 Java 11  
 SpringBoot 2.4.5  
-H2DB  
+H2DB (JDBC URL : jdbc:h2:tcp://localhost/~/test )
   
 ## 테이블 생성 SQL
 sql 디렉토리 내 ddl.sql 파일에 쿼리문을 작성하였습니다.
