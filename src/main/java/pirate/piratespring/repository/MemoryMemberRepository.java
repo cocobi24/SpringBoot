@@ -9,6 +9,7 @@ import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
+    private static Map<Long, BusinessTimes> timeStore = new HashMap<>();
     private static long sequence = 0L;
 
     @Override
@@ -43,6 +44,11 @@ public class MemoryMemberRepository implements MemberRepository {
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    @Override
+    public List<BusinessTimes> findTimes()  {
+        return new ArrayList<>(timeStore.values());
     }
 
     @Override

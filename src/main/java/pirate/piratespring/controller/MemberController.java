@@ -112,6 +112,14 @@ public class MemberController<Holiday> {
         return "members/memberList";
     }
 
+    //영업시간
+    @GetMapping(value = "/businessTimes")
+    public String time(Model model) {
+        List<BusinessTimes> businessTimes = memberService.findTime();
+        model.addAttribute("businessTimes", businessTimes);
+        return "members/memberList";
+    }
+
 
 
 

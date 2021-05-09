@@ -42,6 +42,11 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
+    /** 영업시간 */
+    public List<BusinessTimes> findTime() {
+        return memberRepository.findTimes();
+    }
+
     /** 점포 삭제 */
     public Long delete(Member member) {
         memberRepository.delete(member);

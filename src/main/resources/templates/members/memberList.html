@@ -1,47 +1,48 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>점포 리스트</title>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/list.css}">
+    <link rel="stylesheet" href="css/list.css">
+    <title>점포 리스트</title>
 </head>
-<style>
-    table {
-        width: 100%;
-        border: 1px solid #444444;
-        border-collapse: collapse;
-    }
-    th, td {
-        border: 1px solid #444444;
-        padding: 10px;
-    }
-    button {
-        margin-top: 20px;
-        float: right;
-    }
-</style>
+<script>
+    today = new Date()
+    let week = new Array('Sunday', 'Monday', 'tuesday', 'Wednesday', 'thursday', 'Friday', 'Saturday');
+    let day = week[today.getDay()]
+</script>
 <body>
 <div class="container">
-    <div>
+    <div class="container">
+        <div>
+            <script>document.write( today.getFullYear(), ". ", today.getMonth()+1, ". ", today.getDate(), " (", day, ")")</script>
+        </div>
         <table>
             <thead>
-            <tr>
-                <th>점포명</th>
-                <th>정보</th>
-                <th>level</th>
-                <th>영업상태</th>
-            </tr>
+                <tr>
+                    <th>점포명</th>
+                    <th>정보</th>
+                    <th>level</th>
+                    <th>영업상태</th>
+                </tr>
             </thead>
             <tbody>
-            <tr th:each="member : ${members}">
-                <td th:text="${member.name}"></td>
-                <td th:text="${member.description}"></td>
-                <td th:text="${member.level}"></td>
-                <td th:text="OPEN"></td>
-            </tr>
+                <tr th:each="member : ${members}">
+                    <td th:text="${member.name}"></td>
+                    <td th:text="${member.description}"></td>
+                    <td th:text="${member.level}"></td>
+                    <td style="color: blue" th:if="${member.level} == '1'" th:text="OPEN"></td>
+                    <td style="color: red" th:unless="${member.level} == '1'" th:text="CLOSE"></td>
+                </tr>
+                <tr th:each="businessTime : ${businessTimes}">
+                    <td th:text="${businessTime.name}"></td>
+                </tr>
             </tbody>
+
         </table>
+        <button type="button"><a href="/">이전 메뉴로</a></button>
     </div>
-    <button type="button"><a href="/">이전 메뉴로</a></button>
 </div> <!-- /container -->
 </body>
 </html>

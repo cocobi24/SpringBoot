@@ -4,24 +4,24 @@ public class BusinessTimes {
     private String name;
 
     private String monday;
-    private String mondayOpen;
-    private String mondayClose;
+    private Long mondayOpen;
+    private Long mondayClose;
 
     private String tuesday;
-    private String tuesdayOpen;
-    private String tuesdayClose;
+    private Long tuesdayOpen;
+    private Long tuesdayClose;
 
     private String wednesday;
-    private String wednesdayOpen;
-    private String wednesdayClose;
+    private Long wednesdayOpen;
+    private Long wednesdayClose;
 
     private String thursday;
-    private String thursdayOpen;
-    private String thursdayClose;
+    private Long thursdayOpen;
+    private Long thursdayClose;
 
     private String friday;
-    private String fridayOpen;
-    private String fridayClose;
+    private Long fridayOpen;
+    private Long fridayClose;
 
     public String getName() {
         return name;
@@ -39,19 +39,19 @@ public class BusinessTimes {
         this.monday = monday;
     }
 
-    public String getMondayOpen() {
+    public Long getMondayOpen() {
         return mondayOpen;
     }
 
-    public void setMondayOpen(String mondayOpen) {
+    public void setMondayOpen(Long mondayOpen) {
         this.mondayOpen = mondayOpen;
     }
 
-    public String getMondayClose() {
+    public Long getMondayClose() {
         return mondayClose;
     }
 
-    public void setMondayClose(String mondayClose) {
+    public void setMondayClose(Long mondayClose) {
         this.mondayClose = mondayClose;
     }
 
@@ -63,19 +63,19 @@ public class BusinessTimes {
         this.tuesday = tuesday;
     }
 
-    public String getTuesdayOpen() {
+    public Long getTuesdayOpen() {
         return tuesdayOpen;
     }
 
-    public void setTuesdayOpen(String tuesdayOpen) {
+    public void setTuesdayOpen(Long tuesdayOpen) {
         this.tuesdayOpen = tuesdayOpen;
     }
 
-    public String getTuesdayClose() {
+    public Long getTuesdayClose() {
         return tuesdayClose;
     }
 
-    public void setTuesdayClose(String tuesdayClose) {
+    public void setTuesdayClose(Long tuesdayClose) {
         this.tuesdayClose = tuesdayClose;
     }
 
@@ -87,19 +87,19 @@ public class BusinessTimes {
         this.wednesday = wednesday;
     }
 
-    public String getWednesdayOpen() {
+    public Long getWednesdayOpen() {
         return wednesdayOpen;
     }
 
-    public void setWednesdayOpen(String wednesdayOpen) {
+    public void setWednesdayOpen(Long wednesdayOpen) {
         this.wednesdayOpen = wednesdayOpen;
     }
 
-    public String getWednesdayClose() {
+    public Long getWednesdayClose() {
         return wednesdayClose;
     }
 
-    public void setWednesdayClose(String wednesdayClose) {
+    public void setWednesdayClose(Long wednesdayClose) {
         this.wednesdayClose = wednesdayClose;
     }
 
@@ -111,19 +111,19 @@ public class BusinessTimes {
         this.thursday = thursday;
     }
 
-    public String getThursdayOpen() {
+    public Long getThursdayOpen() {
         return thursdayOpen;
     }
 
-    public void setThursdayOpen(String thursdayOpen) {
+    public void setThursdayOpen(Long thursdayOpen) {
         this.thursdayOpen = thursdayOpen;
     }
 
-    public String getThursdayClose() {
+    public Long getThursdayClose() {
         return thursdayClose;
     }
 
-    public void setThursdayClose(String thursdayClose) {
+    public void setThursdayClose(Long thursdayClose) {
         this.thursdayClose = thursdayClose;
     }
 
@@ -135,19 +135,19 @@ public class BusinessTimes {
         this.friday = friday;
     }
 
-    public String getFridayOpen() {
+    public Long getFridayOpen() {
         return fridayOpen;
     }
 
-    public void setFridayOpen(String fridayOpen) {
+    public void setFridayOpen(Long fridayOpen) {
         this.fridayOpen = fridayOpen;
     }
 
-    public String getFridayClose() {
+    public Long getFridayClose() {
         return fridayClose;
     }
 
-    public void setFridayClose(String fridayClose) {
+    public void setFridayClose(Long fridayClose) {
         this.fridayClose = fridayClose;
     }
 }

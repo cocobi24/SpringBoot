@@ -6,6 +6,46 @@
     <link rel="stylesheet" th:href="@{/css/createForm.css}">
     <link rel="stylesheet" href="css/createForm.css">
     <title>신규 점포 등록</title>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $('#submit').on("click", function(){
+
+                if($("#name").val()==""){
+                    alert("점포명을 입력해주세요.");
+                    $("#name").focus();
+                    return false;
+                }
+
+                if($("#owner").val()==""){
+                    alert("업주명을 입력해주세요.");
+                    $("#owner").focus();
+                    return false;
+                }
+
+                if($("#description").val()==""){
+                    alert("점포 정보를 입력해주세요.");
+                    $("#description").focus();
+                    return false;
+                }
+
+                if($("#address").val()==""){
+                    alert("점포 주소를 입력해주세요.");
+                    $("#address").focus();
+                    return false;
+                }
+
+                if($("#phone").val()==""){
+                    alert("전화번호를 입력해주세요.");
+                    $("#phone").focus();
+                    return false;
+                }
+
+            });
+
+        });
+    </script>
 </head>
 <body>
     <div class="form-container">
@@ -16,7 +56,7 @@
                 <input type="text" id="description" name="description" placeholder="점포 정보를 입력하세요">
                 <input type="text" id="address" name="address" placeholder="주소를 입력하세요">
                 <input type="text" id="phone" name="phone" placeholder="전화번호를 입력하세요">
-                <button id="submit" type="submit">다음:영업시간 등록</button>
+                <button id="submit" name="submit" type="submit">다음:영업시간 등록</button>
                 <a href="/"><button id="home" type="button">취소</button></a>
             </form>
         </div>

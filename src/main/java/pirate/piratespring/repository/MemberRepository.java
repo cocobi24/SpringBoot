@@ -16,6 +16,7 @@ public interface MemberRepository {
     Optional<Member> findByLevel(Long level);
     Optional<Member> findByName(String name);
     List<Member> findAll();
+    List<BusinessTimes> findTimes();
 
 
 }

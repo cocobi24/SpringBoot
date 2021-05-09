@@ -15,8 +15,8 @@ create table member
 create table businessTimes
 (   name varchar(255),
     day varchar(10),
-    open varchar(10),
-    close varchar(10)
+    open bigint ,
+    close bigint
 );
 
 create table holidays

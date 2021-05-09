@@ -6,39 +6,181 @@
     <link rel="stylesheet" th:href="@{/css/openForm.css}">
     <link rel="stylesheet" href="css/openForm.css">
     <title>점포 운영 시간 등록</title>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#submit').on("click", function(){
+
+                //monday
+                if($("#mondayOpen").val()==""){
+                    alert("개장시간을 입력해주세요.");
+                    $("#mondayOpen").focus();
+                    return false;
+                }
+                if($("#mondayClose").val()==""){
+                    alert("마감시간을 입력해주세요.");
+                    $("#mondayClose").focus();
+                    return false;
+                }
+                if($("#mondayOpen").val()== $("#mondayClose").val()){
+                    alert("개장시간과 마감시간은 동일할 수 없습니다.");
+                    $("#mondayOpen").focus();
+                    return false;
+                }
+                if($("#mondayOpen").val() > $("#mondayClose").val()){
+                    alert("개장시간이 마감시간보다 빠를수 없습니다.");
+                    $("#mondayOpen").focus();
+                    return false;
+                }
+                let mondayOpenReplace = $('#mondayOpen').val().replace(":","");
+                $('#mondayOpen').val(mondayOpenReplace);
+                let mondayCloseReplace = $('#mondayClose').val().replace(":","");
+                $('#mondayClose').val(mondayCloseReplace);
+
+
+                //tuesday
+                if($("#tuesdayOpen").val()==""){
+                    alert("개장시간을 입력해주세요.");
+                    $("#tuesdayOpen").focus();
+                    return false;
+                }
+                if($("#tuesdayClose").val()==""){
+                    alert("마감시간을 입력해주세요.");
+                    $("#tuesdayClose").focus();
+                    return false;
+                }
+                if($("#tuesdayOpen").val()== $("#tuesdayClose").val()){
+                    alert("개장시간과 마감시간은 동일할 수 없습니다.");
+                    $("#tuesdayOpen").focus();
+                    return false;
+                }
+                if($("#tuesdayOpen").val() > $("#tuesdayClose").val()){
+                    alert("개장시간이 마감시간보다 빠를수 없습니다.");
+                    $("#tuesdayOpen").focus();
+                    return false;
+                }
+                let tuesdayOpenReplace = $('#tuesdayOpen').val().replace(":","");
+                $('#tuesdayOpen').val(tuesdayOpenReplace);
+                let tuesdayCloseReplace = $('#tuesdayClose').val().replace(":","");
+                $('#tuesdayClose').val(tuesdayCloseReplace);
+
+
+                //wednesday
+                if($("#wednesdayOpen").val()==""){
+                    alert("개장시간을 입력해주세요.");
+                    $("#wednesdayOpen").focus();
+                    return false;
+                }
+                if($("#wednesdayClose").val()==""){
+                    alert("마감시간을 입력해주세요.");
+                    $("#wednesdayClose").focus();
+                    return false;
+                }
+                if($("#wednesdayOpen").val() == $("#wednesdayClose").val()){
+                    alert("개장시간과 마감시간은 동일할 수 없습니다.");
+                    $("#wednesdayOpen").focus();
+                    return false;
+                }
+                if($("#wednesdayOpen").val() > $("#wednesdayClose").val()){
+                    alert("개장시간이 마감시간보다 빠를수 없습니다.");
+                    $("#wednesdayOpen").focus();
+                    return false;
+                }
+                let wednesdayOpenReplace = $('#wednesdayOpen').val().replace(":","");
+                $('#wednesdayOpen').val(wednesdayOpenReplace);
+                let wednesdayCloseReplace = $('#wednesdayClose').val().replace(":","");
+                $('#wednesdayClose').val(wednesdayCloseReplace);
+
+
+                //thursday
+                if($("#thursdayOpen").val()==""){
+                    alert("개장시간을 입력해주세요.");
+                    $("#thursdayOpen").focus();
+                    return false;
+                }
+                if($("#thursdayClose").val()==""){
+                    alert("마감시간을 입력해주세요.");
+                    $("#thursdayClose").focus();
+                    return false;
+                }
+                if($("#thursdayOpen").val()== $("#thursdayClose").val()){
+                    alert("개장시간과 마감시간은 동일할 수 없습니다.");
+                    $("#thursdayOpen").focus();
+                    return false;
+                }
+                if($("#thursdayOpen").val() > $("#thursdayClose").val()){
+                    alert("개장시간이 마감시간보다 빠를수 없습니다.");
+                    $("#thursdayOpen").focus();
+                    return false;
+                }
+                let thursdayOpenReplace = $('#thursdayOpen').val().replace(":","");
+                $('#thursdayOpen').val(thursdayOpenReplace);
+                let thursdayCloseReplace = $('#thursdayClose').val().replace(":","");
+                $('#thursdayClose').val(thursdayCloseReplace);
+
+                //friday
+                if($("#fridayOpen").val()==""){
+                    alert("개장시간을 입력해주세요.");
+                    $("#fridayOpen").focus();
+                    return false;
+                }
+                if($("#fridayClose").val()==""){
+                    alert("마감시간을 입력해주세요.");
+                    $("#fridayClose").focus();
+                    return false;
+                }
+                if($("#fridayOpen").val()== $("#fridayClose").val()){
+                    alert("개장시간과 마감시간은 동일할 수 없습니다.");
+                    $("#fridayOpen").focus();
+                    return false;
+                }
+                if($("#fridayOpen").val() > $("#fridayClose").val()){
+                    alert("개장시간이 마감시간보다 빠를수 없습니다.");
+                    $("#fridayOpen").focus();
+                    return false;
+                }
+                let fridayOpenReplace = $('#fridayOpen').val().replace(":","");
+                $('#fridayOpen').val(fridayOpenReplace);
+                let fridayCloseReplace = $('#fridayClose').val().replace(":","");
+                $('#fridayClose').val(fridayCloseReplace);
+
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="form-container">
+        <div style="color: gray; padding-left: 710px; font-size: 13px">(입력형식:HH:MM)</div>
         <div class="form">
             <form class="day-form" id="form" action="/members/open" method="post">
                 <div>Monday
                     <input type="hidden" id="monday" name="monday" value="Monday">
-                    <input type="text" id="mondayOpen" name="mondayOpen" placeholder="open">
-                    <input type="text" id="mondayClose" name="mondayClose" placeholder="close">
+                    <input type="text" id="mondayOpen" name="mondayOpen" placeholder="open" maxlength="5">
+                    <input type="text" id="mondayClose" name="mondayClose" placeholder="close" maxlength="5">
                 </div>
                 <div>Tuesday
                     <input type="hidden" id="tuesday" name="tuesday" value="Tuesday">
-                    <input type="text" id="tuesdayOpen" name="tuesdayOpen" placeholder="open">
-                    <input type="text" id="tuesdayClose" name="tuesdayClose" placeholder="close">
+                    <input type="text" id="tuesdayOpen" name="tuesdayOpen" placeholder="open" maxlength="5">
+                    <input type="text" id="tuesdayClose" name="tuesdayClose" placeholder="close" maxlength="5">
                 </div>
                 <div>Wednesday
                     <input type="hidden" id="wednesday" name="wednesday" value="Wednesday">
-                    <input type="text" id="wednesdayOpen" name="wednesdayOpen" placeholder="open">
-                    <input type="text" id="wednesdayClose" name="wednesdayClose" placeholder="close">
+                    <input type="text" id="wednesdayOpen" name="wednesdayOpen" placeholder="open" maxlength="5">
+                    <input type="text" id="wednesdayClose" name="wednesdayClose" placeholder="close" maxlength="5">
                 </div>
                 <div>Thursday
                     <input type="hidden" id="thursday" name="thursday" value="Thursday">
-                    <input type="text" id="thursdayOpen" name="thursdayOpen" placeholder="open">
-                    <input type="text" id="thursdayClose" name="thursdayClose" placeholder="close">
+                    <input type="text" id="thursdayOpen" name="thursdayOpen" placeholder="open" maxlength="5">
+                    <input type="text" id="thursdayClose" name="thursdayClose" placeholder="close" maxlength="5">
                 </div>
                 <div>Friday
                     <input type="hidden" id="friday" name="friday" value="Friday">
-                    <input type="text" id="fridayOpen" name="fridayOpen" placeholder="open">
-                    <input type="text" id="fridayClose" name="fridayClose" placeholder="close">
+                    <input type="text" id="fridayOpen" name="fridayOpen" placeholder="open" maxlength="5">
+                    <input type="text" id="fridayClose" name="fridayClose" placeholder="close" maxlength="5">
                 </div>
                 <div class="button-form">
                     <div>
-                        <a><button id="submit" type="submit">등록</button></a>
+                        <a><button id="submit" name="submit" type="submit">등록</button></a>
                     </div>
                     <div>
                         <a href="/"><button id="home" type="button">취소</button></a>
